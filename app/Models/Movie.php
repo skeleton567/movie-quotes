@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Movie extends Model
 {
     use HasFactory;
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    public function quotes()
+    {
+        return $this->hasMany('App\Models\Quote');
+    }
 }
