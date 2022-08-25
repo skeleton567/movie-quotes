@@ -20,9 +20,9 @@ class QuoteFactory extends Factory
     {
         return [
             //
-            'name' => fake()->unique()->name(),
+            'name' => fake()->unique()->sentence(),
             'user_id' => User::factory(),
-            'movie_id' => Movie::factory(),
+            'movie_id' => 1,
             'image' => fake()->word(),
 
         ];

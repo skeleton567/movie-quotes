@@ -28,14 +28,14 @@ class CreateUser extends Command
      */
     public function handle()
     {
-        print_r(User::where('email', $this->argument()['email'])->get());
-
         if (!filter_var($this->argument()['email'], FILTER_VALIDATE_EMAIL)) {
             echo "Email should be in email format\n";
-        } elseif (User::where('email', $this->argument()['email'])->get() === []) {
+        } elseif (User::where('email', '=', $this->argument()['email'])->first()) {
             echo "Duplicate entry!\n";
         } else {
-            User::create($this->arguments());
+            $arguments = $this->argument();
+            $arguments['password'] = bcrypt($this->argument()['password']);
+            User::create($arguments);
             echo "User created succesfully!\n";
         }
     }
