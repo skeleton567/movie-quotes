@@ -12,14 +12,14 @@ class MovieController extends Controller
     public function index()
     {
         return view('index', [
-            'movies' => Movie::all(),
+            'movie' => Movie::all()->isEmpty() ? null : Movie::all()->random(1),
         ]);
     }
 
-    public function show()
+    public function show(Movie $movie)
     {
         return view('show', [
-            'movies' => Movie::all(),
+            'movie' => $movie,
         ]);
     }
 }

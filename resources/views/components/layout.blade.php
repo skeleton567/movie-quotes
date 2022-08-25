@@ -4,19 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Movie quotes</title>
     @vite('resources/css/app.css')
 </head>
-<body  class="box-border m-0 p-0 bg-darkGray-image flex"> 
+<body  {{$attributes->merge(['class'=>"box-border bg-darkGray-image m-0 p-4"])}}> 
 
-    <aside class="h-screen w-11 text-white fixed flex flex-col pl-6 justify-center space-y-2">
-        <button class="border w-8 p-1 rounded-full">en</button>
-        <button class="border w-8 p-1 rounded-full">ka</button>
-    </aside>
+    <nav class="mr-6 w-full text-white fixed flex justify-end pr-10">
+        
+            <ul class="flex space-x-6">
+                <li><a href="">Log In</a> </li>
+                <li><a href="/">Home</a></li>
+                <li><a href="">Dashboard</a> </li>
+            </ul>
+        
+    </nav>
 
+    <div class="flex">
+        <aside class="h-screen w-11 text-white fixed flex flex-col pl-2 justify-center space-y-2">
+            <button class="border w-8 p-1 rounded-full">en</button>
+            <button class="border w-8 p-1 rounded-full">ka</button>
+        </aside>
     
-        {{$slot}}
-    
+        <main class="w-full flex justify-center items-center">
+            {{$slot}}
+        </main>
+    </div>
+
+ 
    
      
   

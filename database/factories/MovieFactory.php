@@ -20,7 +20,7 @@ class MovieFactory extends Factory
         return [
             //
 
-            'name' => fake()->unique()->name(),
+            'name' => fake()->unique()->word(),
             'user_id' => User::factory()
         ];
     }
