@@ -12,9 +12,17 @@
     <nav class="mr-6 w-full text-white fixed flex justify-end pr-10">
         
             <ul class="flex space-x-6">
-                <li><a href="">Log In</a> </li>
-                <li><a href="/">Home</a></li>
-                <li><a href="">Dashboard</a> </li>
+                
+                <li><a href="{{route('home')}}">Home</a></li>
+                @guest
+                <li><a href="{{route('session.create')}}">Sign In</a> </li>
+                    @else
+                    <li><form action="{{route('session.destroy')}}" method="POST">
+                        @csrf
+                        <button type="submit">Sign Out </button>
+                    </form></li>
+                    <li><a href="{{route('dashboard')}}">Dashboard</a> </li>
+                @endguest
             </ul>
         
     </nav>
