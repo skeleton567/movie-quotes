@@ -22,6 +22,9 @@ Route::get('/movies/{movie}', [MovieController::class, 'show'])->name('movie');
 
 Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [SessionsController::class, 'destroy'])->name('session.destroy');
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/admin/movies', [AdminController::class, 'showMovies'])->name('admin.movies');
+    Route::get('/admin/quotes', [AdminController::class, 'showQuotes'])->name('admin.quotes');
 });
 
 Route::middleware(['guest'])->group(function () {
