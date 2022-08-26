@@ -25,7 +25,7 @@ class MovieController extends Controller
 
     public function allMovies()
     {
-        return view('admin.show-movies', [
+        return view('dashboard.show-movies', [
             'movies' => Movie::simplePaginate(10)
         ]);
     }

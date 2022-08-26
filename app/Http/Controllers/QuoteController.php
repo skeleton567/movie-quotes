@@ -11,7 +11,7 @@ class QuoteController extends Controller
     //
     public function allQuotes()
     {
-        return view('admin.show-quotes', [
+        return view('dashboard.show-quotes', [
             'movies' => Movie::all(),
             'quotes' => Quote::simplePaginate(10)
         ]);
