@@ -3,15 +3,17 @@
 
  
 
-   @if(isset($movie))
+   @if(isset($quote))
        
    
   
 
         <div class="mt-44 flex flex-col max-w-4xl items-center text-[48px] text-white"> 
-            <img width="700px" height="400px" class="rounded-xl" src="images/paper.jpg" alt="">
-            <h2 class="mt-6">{{$movie[0]->quotes->isEmpty() ? 'No qoutes yet' : $movie[0]->quotes->random(1)[0]->name}}</h2>
-            <a href="{{route('movie', ['movie' => $movie[0]->id])}}"><h1 class="mt-12 underline">{{$movie[0]->name}}</h1></a> 
+               <div class="bg-white w-[700px] h-[386px]">
+                    <img class="w-full h-full" class="rounded-xl" src="storage/{{$quote[0]->image}}" alt="">
+               </div>
+            <h2 class="mt-6">"{{$quote[0]->name}}"</h2>
+            <a href="{{route('movie', ['movie' => $quote[0]->movie->id])}}"><h1 class="mt-12 underline">{{$quote[0]->movie->name}}</h1></a> 
         </div>
 
 

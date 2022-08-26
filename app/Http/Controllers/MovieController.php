@@ -8,14 +8,6 @@ use Illuminate\Http\Request;
 class MovieController extends Controller
 {
     //
-
-    public function index()
-    {
-        return view('index', [
-            'movie' => Movie::all()->isEmpty() ? null : Movie::all()->random(1),
-        ]);
-    }
-
     public function show(Movie $movie)
     {
         return view('show', [
@@ -23,10 +15,19 @@ class MovieController extends Controller
         ]);
     }
 
-    public function allMovies()
+    public function index()
     {
         return view('dashboard.show-movies', [
             'movies' => Movie::simplePaginate(10)
         ]);
+    }
+
+    public function create()
+    {
+        return view('movies.create');
+    }
+
+    public function store()
+    {
     }
 }
