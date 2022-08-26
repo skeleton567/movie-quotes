@@ -2,8 +2,7 @@
 
    
 
-    <div class="mt-80 sm:mx-auto sm:w-full sm:max-w-md">
-      <div class="py-8 px-4 shadow shadow-white sm:rounded-lg sm:px-10">
+  <x-form.wrap class="mt-72">
         <form class="space-y-6" action="{{route('session.store')}}" method="POST">
             @csrf
             <x-form.input name="email" type="email"/>
@@ -16,8 +15,7 @@
         </form>
   
        
-          </div>
-        </div>
+      </x-form.wrap>
       
 
 </x-layout>

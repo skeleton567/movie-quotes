@@ -22,4 +22,11 @@ class MovieController extends Controller
             'movie' => $movie,
         ]);
     }
+
+    public function allMovies()
+    {
+        return view('dashboard.show-movies', [
+            'movies' => Movie::simplePaginate(10)
+        ]);
+    }
 }

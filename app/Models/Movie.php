@@ -18,4 +18,9 @@ class Movie extends Model
     {
         return $this->hasMany('App\Models\Quote');
     }
+
+    public function getNameAttribute($name)
+    {
+        return ucwords($name);
+    }
 }

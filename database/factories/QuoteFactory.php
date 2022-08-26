@@ -22,7 +22,7 @@ class QuoteFactory extends Factory
             //
             'name' => fake()->unique()->sentence(),
             'user_id' => User::factory(),
-            'movie_id' => 1,
+            'movie_id' => Movie::factory(),
             'image' => fake()->word(),
 
         ];

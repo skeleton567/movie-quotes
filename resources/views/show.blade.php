@@ -12,7 +12,7 @@
                     <img class="" src="/images/paper.jpg" alt="">
 
                     <div class="pb-7">
-                        <h2 class="mt-6 text-[36px]">{{$qoute->name}}</h2>
+                        <h2 class="mt-6 mx-4 text-[36px]">{{$qoute->name}}</h2>
                     </div>
                 </div>
             @endforeach
