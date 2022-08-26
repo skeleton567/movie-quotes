@@ -22,4 +22,11 @@ class MovieController extends Controller
             'movie' => $movie,
         ]);
     }
+
+    public function allMovies()
+    {
+        return view('admin.show-movies', [
+            'movies' => Movie::simplePaginate(10)
+        ]);
+    }
 }

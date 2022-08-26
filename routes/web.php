@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\QuoteController;
 use App\Http\Controllers\SessionsController;
 use Illuminate\Support\Facades\Route;
 
@@ -22,11 +23,9 @@ Route::get('/movies/{movie}', [MovieController::class, 'show'])->name('movie');
 
 Route::middleware(['auth'])->group(function () {
     Route::post('/logout', [SessionsController::class, 'destroy'])->name('session.destroy');
-    Route::controller(AdminController::class)->group(function () {
-        Route::get('/admin/dashboard', 'index')->name('dashboard');
-        Route::get('/admin/movies', 'showMovies')->name('admin.movies');
-        Route::get('/admin/quotes', 'showQuotes')->name('admin.quotes');
-    });
+    Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard/movies', [MovieController::class, 'allMovies'])->name('dashboard.movies');
+    Route::get('/dashboard/quotes', [QuoteController::class, 'allQuotes'])->name('dashboard.quotes');
 });
 
 Route::middleware(['guest'])->group(function () {

@@ -6,8 +6,8 @@
             <span class="truncate"> Dashboard </span>
         </a>
         
-        <x-dashboard-item href="{{route('admin.movies')}}">All Movies</x-dashboard-item>
-        <x-dashboard-item  href="{{route('admin.quotes')}}">All Quotes</x-dashboard-item>
+        <x-dashboard-item href="{{route('dashboard.movies')}}">All Movies</x-dashboard-item>
+        <x-dashboard-item  href="{{route('dashboard.quotes')}}">All Quotes</x-dashboard-item>
         <x-dashboard-item>Create new Movie</x-dashboard-item>
         <x-dashboard-item>Create new Quote</x-dashboard-item>
         

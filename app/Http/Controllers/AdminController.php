@@ -13,18 +13,4 @@ class AdminController extends Controller
     {
         return view('admin.index');
     }
-
-    public function showMovies()
-    {
-        return view('admin.show-movies', [
-            'movies' => Movie::simplePaginate(10)
-        ]);
-    }
-    public function showQuotes()
-    {
-        return view('admin.show-quotes', [
-            'movies' => Movie::all(),
-            'quotes' => Quote::simplePaginate(10)
-        ]);
-    }
 }
