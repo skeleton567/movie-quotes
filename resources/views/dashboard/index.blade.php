@@ -8,8 +8,8 @@
         
         <x-dashboard-item href="{{route('dashboard.movies')}}">All Movies</x-dashboard-item>
         <x-dashboard-item  href="{{route('dashboard.quotes')}}">All Quotes</x-dashboard-item>
-        <x-dashboard-item>Create new Movie</x-dashboard-item>
-        <x-dashboard-item>Create new Quote</x-dashboard-item>
+        <x-dashboard-item href="{{route('movies.create')}}">Create new Movie</x-dashboard-item>
+        <x-dashboard-item href="{{route('quotes.create')}}">Create new Quote</x-dashboard-item>
         
       
       

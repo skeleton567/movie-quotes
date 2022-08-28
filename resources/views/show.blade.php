@@ -7,12 +7,16 @@
       
 
         @if ($movie->quotes->count())
-            @foreach ($movie->quotes as $qoute)
-                 <div class="mt-10 max-w-2xl bg-white rounded-xl border border-black">
-                    <img class="" src="/images/paper.jpg" alt="">
+            @foreach ($movie->quotes as $quote)
+                 <div class="mt-10 max-w-[748px] bg-white rounded-xl border border-black">
+
+                    <div class="w-[748px] h-[414px]">
+                        <img class="w-full h-full" src="/storage/{{$quote->image}}" alt="">
+                    </div>
+                    
 
                     <div class="pb-7">
-                        <h2 class="mt-6 mx-4 text-[36px]">{{$qoute->name}}</h2>
+                        <h2 class="mt-6 mx-4 text-[36px]">{{$quote->name}}</h2>
                     </div>
                 </div>
             @endforeach
