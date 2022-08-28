@@ -28,10 +28,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard/movies', [MovieController::class, 'index'])->name('dashboard.movies');
     Route::get('/dashboard/movies/create', [MovieController::class, 'create'])->name('movies.create');
-    Route::post('/dashboard/movies/create', [MovieController::class, 'store'])->name('movies.store');
+    Route::post('/dashboard/movies', [MovieController::class, 'store'])->name('movies.store');
 
     Route::get('/dashboard/quotes/create', [QuoteController::class, 'create'])->name('quotes.create');
-    Route::post('/dashboard/quotes/create', [QuoteController::class, 'store'])->name('quotes.store');
+    Route::post('/dashboard/quotes', [QuoteController::class, 'store'])->name('quotes.store');
     Route::get('/dashboard/quotes', [QuoteController::class, 'allQuotes'])->name('dashboard.quotes');
 });
 

@@ -37,7 +37,6 @@ class QuoteController extends Controller
     public function store(StoreQuoteRequest $request)
     {
         $attributes = $request->validated();
-        $attributes['user_id'] = auth()->id();
         $attributes['image'] = request()->file('image')->store('images');
         Quote::create($attributes);
 

@@ -3,7 +3,7 @@
 <table class="min-w-full divide-y divide-gray-300">
     <thead class="bg-gray-100">
       <tr>
-        <th scope="col" class="py-3.5 pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">{{$listName}}</th>
+        <th scope="col" class="py-3.5 min-w-full pl-4 pr-3 text-left text-sm font-semibold text-gray-900 sm:pl-6">{{$listName}}</th>
         <th scope="col" class="relative py-3.5 pl-3 pr-4 sm:pr-6">
           <span class="sr-only">Edit</span>
         </th>

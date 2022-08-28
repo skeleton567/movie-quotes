@@ -27,8 +27,15 @@ class StoreQuoteRequest extends FormRequest
         return [
             //
             'name' => 'required',
+            'user_id' => 'required',
             'movie_id' => ['required', Rule::exists('movies', 'id')],
             'image' => 'required|image'
         ];
+    }
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'user_id' => auth()->id()
+        ]);
     }
 }
