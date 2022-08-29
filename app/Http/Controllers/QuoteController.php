@@ -36,9 +36,24 @@ class QuoteController extends Controller
 
     public function store(StoreQuoteRequest $request)
     {
-        $attributes = $request->validated();
-        $attributes['image'] = request()->file('image')->store('images');
-        Quote::create($attributes);
+        $quote = Quote::create([
+            'user_id' => $request->validated()['user_id'],
+            'image' => request()->file('image')->store('images'),
+            'movie_id' => $request->validated()['movie_id'],
+        ]);
+
+        $translations  = [
+            'en' => $request->name_en,
+            'ka' => $request->name_ka,
+        ];
+
+        $quote->setTranslations('name', $translations);
+        $quote->save();
+
+
+        // $attributes = $request->validated();
+        // $attributes['image'] = request()->file('image')->store('images');
+        // Quote::create($attributes);
 
         return redirect(route('dashboard.quotes'));
     }
