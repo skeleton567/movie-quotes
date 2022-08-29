@@ -23,18 +23,31 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['language'])->group(function () {
     Route::get('/', [QuoteController::class, 'index'])->name('home');
     Route::get('/movies/{movie}', [MovieController::class, 'show'])->name('movie');
+
+
     Route::middleware(['auth'])->group(function () {
         Route::post('/logout', [SessionsController::class, 'destroy'])->name('session.destroy');
 
         Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
-        Route::get('/dashboard/movies', [MovieController::class, 'index'])->name('dashboard.movies');
-        Route::get('/dashboard/movies/create', [MovieController::class, 'create'])->name('movies.create');
-        Route::post('/dashboard/movies', [MovieController::class, 'store'])->name('movies.store');
 
-        Route::get('/dashboard/quotes/create', [QuoteController::class, 'create'])->name('quotes.create');
-        Route::post('/dashboard/quotes', [QuoteController::class, 'store'])->name('quotes.store');
-        Route::get('/dashboard/quotes', [QuoteController::class, 'allQuotes'])->name('dashboard.quotes');
+        Route::controller(MovieController::class)->group(function () {
+            Route::get('/dashboard/movies', 'index')->name('dashboard.movies');
+            Route::get('/dashboard/movies/create', 'create')->name('movies.create');
+            Route::post('/dashboard/movies', 'store')->name('movies.store');
+            Route::delete('/dashboard/movies/{movie}', 'destroy')->name('movies.destroy');
+            Route::get('/dashboard/movies/{movie}/edit', 'edit')->name('movies.edit');
+            Route::patch('/dashboard/movies/{movie}', 'update')->name('movies.update');
+        });
+
+        Route::controller(QuoteController::class)->group(function () {
+            Route::get('/dashboard/quotes/create', 'create')->name('quotes.create');
+            Route::post('/dashboard/quotes', 'store')->name('quotes.store');
+            Route::get('/dashboard/quotes', 'allQuotes')->name('dashboard.quotes');
+            Route::delete('/dashboard/quotes/{quote}', 'destroy')->name('quotes.destroy');
+            Route::get('/dashboard/quotes/{quote}/edit', 'edit')->name('quotes.edit');
+            Route::patch('/dashboard/quotes/{quote}', 'update')->name('quotes.update');
+        });
     });
 
     Route::middleware(['guest'])->group(function () {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreMovieRequest;
+use App\Http\Requests\UpdateMovieRequest;
 use App\Models\Movie;
 use Illuminate\Http\Request;
 
@@ -35,6 +36,30 @@ class MovieController extends Controller
         ]);
 
         $movie->setTranslations('name', [
+            'en' => $request->name_en,
+            'ka' => $request->name_ka,
+        ]);
+        $movie->save();
+
+        return redirect(route('dashboard.movies'));
+    }
+
+    public function destroy(Movie $movie)
+    {
+        $movie->delete();
+
+        return back();
+    }
+    public function edit(Movie $movie)
+    {
+        return view('movies.edit', [
+            'movie' => $movie,
+        ]);
+    }
+
+    public function update(UpdateMovieRequest $request, Movie $movie)
+    {
+        $movie->replaceTranslations('name', [
             'en' => $request->name_en,
             'ka' => $request->name_ka,
         ]);

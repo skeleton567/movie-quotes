@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreQuoteRequest;
 use App\Http\Requests\StoreSessionsRequest;
+use App\Http\Requests\UpdateQuoteRequest;
 use App\Models\Movie;
 use App\Models\Quote;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class QuoteController extends Controller
     {
         return view('dashboard.show-quotes', [
             'movies' => Movie::all(),
-            'quotes' => Quote::simplePaginate(10)
+            'quotes' => Quote::simplePaginate(5)
         ]);
     }
 
@@ -47,6 +48,38 @@ class QuoteController extends Controller
             'ka' => $request->name_ka,
         ]);
         $quote->save();
+
+        return redirect(route('dashboard.quotes'));
+    }
+
+    public function destroy(Quote $quote)
+    {
+        $quote->delete();
+
+        return back();
+    }
+
+    public function edit(Quote $quote)
+    {
+        return view('quotes.edit', [
+            'quote' => $quote,
+            'movies' => Movie::all()
+        ]);
+    }
+
+    public function update(UpdateQuoteRequest $request, Quote $quote)
+    {
+        $attributes = $request->validated();
+
+        if ($request['image']) {
+            $attributes['image'] = request()->file('image')->store('images');
+        }
+
+        $quote->replaceTranslations('name', [
+            'en' => $request->name_en,
+            'ka' => $request->name_ka,
+        ]);
+        $quote->update($attributes);
 
         return redirect(route('dashboard.quotes'));
     }
