@@ -5,12 +5,12 @@
                 @csrf
 
                 <div>
-                    <x-form.label name="movie in english"/>
+                    <x-form.label for="name_en" name="movie in english"/>
                     <x-form.input name="name_en" class="bg-white" type="text"/>
                 </div>
 
                 <div>
-                    <x-form.label name="movie in georgian"/>
+                    <x-form.label for="name_ka" name="movie in georgian"/>
                     <x-form.input name="name_ka" class="bg-white" type="text"/>
                 </div>
               

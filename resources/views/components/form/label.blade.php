@@ -1,3 +1,3 @@
-@props(['name'])
+@props(['name', 'for'=>$name])
 
-<label for="{{$name}}" class="block text-sm font-medium text-white"> {{ucwords($name)}} </label>
+<label for="{{$for}}" class="block text-sm font-medium text-white"> {{ucwords($name)}} </label>

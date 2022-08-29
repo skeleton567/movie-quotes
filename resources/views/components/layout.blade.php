@@ -21,7 +21,6 @@
                     <li><a href="{{route('dashboard')}}">Dashboard</a> </li>
                 @endguest
             </ul>
-        
     </nav>
 
     <div class="flex">

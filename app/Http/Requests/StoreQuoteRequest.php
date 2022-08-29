@@ -26,8 +26,8 @@ class StoreQuoteRequest extends FormRequest
     {
         return [
             //
-            'name_en' => 'required|min:4',
-            'name_ka' => 'required|min:4',
+            'name_en' => 'required|min:2',
+            'name_ka' => 'required|min:2',
             'user_id' => 'required',
             'movie_id' => ['required', Rule::exists('movies', 'id')],
             'image' => 'required|image'
