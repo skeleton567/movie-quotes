@@ -42,11 +42,6 @@ class MovieController extends Controller
         $movie->setTranslations('name', $translations);
         $movie->save();
 
-
-        // $attributes = $request->validated();
-        // $attributes['image'] = request()->file('image')->store('images');
-        // Quote::create($attributes);
-
         return redirect(route('dashboard.movies'));
     }
 }
