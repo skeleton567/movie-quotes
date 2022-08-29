@@ -42,18 +42,11 @@ class QuoteController extends Controller
             'movie_id' => $request->validated()['movie_id'],
         ]);
 
-        $translations  = [
+        $quote->setTranslations('name', [
             'en' => $request->name_en,
             'ka' => $request->name_ka,
-        ];
-
-        $quote->setTranslations('name', $translations);
+        ]);
         $quote->save();
-
-
-        // $attributes = $request->validated();
-        // $attributes['image'] = request()->file('image')->store('images');
-        // Quote::create($attributes);
 
         return redirect(route('dashboard.quotes'));
     }

@@ -34,12 +34,10 @@ class MovieController extends Controller
             'user_id' => $request->validated()['user_id'],
         ]);
 
-        $translations  = [
+        $movie->setTranslations('name', [
             'en' => $request->name_en,
             'ka' => $request->name_ka,
-        ];
-
-        $movie->setTranslations('name', $translations);
+        ]);
         $movie->save();
 
         return redirect(route('dashboard.movies'));
