@@ -1,24 +1,24 @@
 <x-layout class="h-[calc(100vh-100px)]">
     <x-form.wrap class="mt-20">
-        <x-list-wrap name="Edit Quote" route="{{route('dashboard.quotes')}}">
+        <x-list-wrap name="{{__('text.edit_quote')}}" route="{{route('dashboard.quotes')}}">
             <form class="space-y-6" action="{{route('quotes.update', ['quote'=> $quote->id])}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
 
                 <div>
-                    <x-form.label for="name_en" name="quote in english"/>
+                    <x-form.label for="name_en" name="{{__('text.quote_english')}}"/>
                     <x-form.textarea name="name.en">{{$quote->getTranslation('name', 'en')}}</x-form.textarea>
                     <x-form.error name="name_en"/>
                 </div>
 
                 <div>
-                    <x-form.label for="name_ka" name="quote in georgian"/>
+                    <x-form.label for="name_ka" name="{{__('text.quote_georgian')}}"/>
                     <x-form.textarea name="name.ka">{{$quote->getTranslation('name', 'ka')}}</x-form.textarea>
                     <x-form.error name="name_ka"/>
                 </div>
                     
                     <div>
-                        <x-form.label name="image"/>
+                        <x-form.label name="{{__('text.image')}}"/>
                         <x-form.input class="bg-white" name="image" type="file"/>
                     </div>
             
@@ -29,7 +29,7 @@
                 </select>
                 <x-form.error name="movie_id"/>
               
-                <x-form.submit-button>Edit Quote</x-form.submit-button>
+                <x-form.submit-button>{{__('text.edit_quote')}}</x-form.submit-button>
             </form>
         </x-list-wrap>
     </x-form.wrap>

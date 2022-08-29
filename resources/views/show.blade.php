@@ -26,7 +26,7 @@
 
         
         
-            <x-empty-message class=" mt-80">No qoutes yet!</x-empty-message>
+            <x-empty-message class=" mt-80">{{__('text.no_quotes')}}</x-empty-message>
         
         @endif
             

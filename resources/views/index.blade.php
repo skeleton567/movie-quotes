@@ -24,7 +24,7 @@
 
         
         
-        <x-empty-message class=" mt-20">No movies here yet!</x-empty-message>
+        <x-empty-message class=" mt-20">{{__('text.no_movies')}}</x-empty-message>
 
         
    @endif
