@@ -7,13 +7,13 @@
                 <div>
                     <x-form.label name="quote in english"/>
                     <x-form.textarea name="name.en"/>
-                    <x-form.error name="name.en"/>
+                    <x-form.error name="name_en"/>
                 </div>
 
                 <div>
                     <x-form.label name="quote in georgian"/>
                     <x-form.textarea name="name.ka"/>
-                    <x-form.error name="name.ka"/>
+                    <x-form.error name="name_ka"/>
                 </div>
                     
                     <div>

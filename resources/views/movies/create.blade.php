@@ -6,12 +6,12 @@
 
                 <div>
                     <x-form.label name="movie in english"/>
-                    <x-form.input name="name.en" class="bg-white" type="text"/>
+                    <x-form.input name="name_en" class="bg-white" type="text"/>
                 </div>
 
                 <div>
                     <x-form.label name="movie in georgian"/>
-                    <x-form.input name="name.ka" class="bg-white" type="text"/>
+                    <x-form.input name="name_ka" class="bg-white" type="text"/>
                 </div>
               
                 <x-form.submit-button>Create Movie</x-form.submit-button>
