@@ -3,9 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
 
-class StoreQuoteRequest extends FormRequest
+class StoreMovieRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,14 +28,12 @@ class StoreQuoteRequest extends FormRequest
             'name_en' => 'required|min:4',
             'name_ka' => 'required|min:4',
             'user_id' => 'required',
-            'movie_id' => ['required', Rule::exists('movies', 'id')],
-            'image' => 'required|image'
         ];
     }
     protected function prepareForValidation()
     {
         $this->merge([
-            'user_id' => auth()->id()
+            'user_id' => auth()->id(),
         ]);
     }
 }

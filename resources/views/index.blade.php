@@ -1,5 +1,5 @@
 
-<x-layout class="h-screen">
+<x-layout class="h-[calc(100vh-100px)]">
 
  
 
@@ -8,7 +8,7 @@
    
   
 
-        <div class="mt-44 flex flex-col max-w-4xl items-center text-[48px] text-white"> 
+        <div class="mt-20 flex flex-col max-w-4xl items-center text-[48px] text-white"> 
                <div class="bg-white w-[700px] h-[386px]">
                     <img class="w-full h-full" class="rounded-xl" src="storage/{{$quote[0]->image}}" alt="">
                </div>
@@ -24,7 +24,7 @@
 
         
         
-        <x-empty-message class=" mt-96">No movies here yet!</x-empty-message>
+        <x-empty-message class=" mt-20">No movies here yet!</x-empty-message>
 
         
    @endif

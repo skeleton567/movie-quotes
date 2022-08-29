@@ -1,5 +1,5 @@
-<x-layout>
-  <x-form.wrap class="mt-72 w-96">
+<x-layout class="h-[calc(100vh-100px)]">
+  <x-form.wrap class="mt-20 w-96">
         <form class="space-y-6" action="{{route('session.create')}}" method="POST">
             @csrf
             <div>
