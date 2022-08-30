@@ -55,7 +55,7 @@ php artisan key:generate
 
 5\. We need to link our storage folder to public folder:
 ```sh
-php artisan key:generate
+php artisan storage:link
 ```
 
 6\. Now we need to set our env file. Go to the root of your project and execute this command:
