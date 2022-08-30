@@ -18,7 +18,7 @@ class SessionsController extends Controller
     {
         if (!auth()->attempt($request->validated())) {
             throw ValidationException::withMessages([
-                'email' => 'Email or password is not correct'
+                'email' => __('text.email_incorect')
                 ]);
         }
 

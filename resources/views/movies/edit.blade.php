@@ -1,5 +1,5 @@
 <x-layout class="h-[calc(100vh-100px)]">
-    <x-form.wrap class="mt-20">
+    <x-form.wrap class="mt-20 w-[500px]">
         <x-list-wrap name="{{__('text.edit_movie')}}"  route="{{route('dashboard.movies')}}">
             <form class="space-y-6" action="{{route('movies.update', ['movie'=>$movie->id])}}" method="POST" enctype="multipart/form-data">
                 @csrf

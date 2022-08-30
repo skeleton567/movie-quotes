@@ -4,12 +4,12 @@
             @csrf
             <div>
               <x-form.label name="{{__('text.email')}}"/>
-              <x-form.input name="email" type="email"/>
+              <x-form.input id="{{__('text.email')}}" name="email" type="email"/>
             </div>
             
             <div>
               <x-form.label name="{{__('text.password')}}"/>
-              <x-form.input name="password" type="password"/>
+              <x-form.input id="{{__('text.password')}}" name="password" type="password"/>
             </div>
             
           
