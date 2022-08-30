@@ -107,4 +107,4 @@ For Tailiwind CSS to work you must also run:
 ```sh
 https://drawsql.app/teams/skeleton-team/diagrams/movie-quotes
 ```
-<img src="readme/assets/drawsql.png" width="100%" height="300" style="position: relative; top: 4px" />
+<img src="readme/assets/drawsql.png" width="100%" height="500" style="position: relative; top: 4px" />
