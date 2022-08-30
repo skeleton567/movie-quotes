@@ -13,8 +13,8 @@ The platform has its own admin panel where you can add movies and quotes.
 * [Getting Started](#getting-started)
 * [Migrations](#migration)
 * [Development](#development)
-* [Deployment](#deployment)
 * [Resources](#resources)
+* [User Creation](#user-creation)
 
 #
 ### Prerequisites
@@ -30,7 +30,7 @@ The platform has its own admin panel where you can add movies and quotes.
 
 * <img src="readme/assets/laravel.png" height="18" style="position: relative; top: 4px" /> [Laravel@9.x](https://laravel.com/docs/9.x) - back-end framework
 * <img src="readme/assets/spatie.png" height="19" style="position: relative; top: 4px" /> [Spatie Translatable](https://github.com/spatie/laravel-translatable) - package for translation
-* <img src="readme/assets/tailwind.png" height="19" style="position: relative; top: 4px" /> [Tailwind CSS](https://tailwindcss.com) - css library
+* <img src="readme/assets/tailwind.png" height="19" style="position: relative; top: 4px" /> [Tailwind CSS](https://tailwindcss.com) - CSS library
 
 #
 ### Getting Started
@@ -48,20 +48,19 @@ composer install
 ```sh
 npm install
 ```
-
-and also:
-```sh
-npm run dev
-```
-in order to run Tailwind CSS.
-
-4\. Now we need to set our env file. Go to the root of your project and execute this command.
-```sh
-cp .env.example .env
-```
-5\. Now we need to generate Laravel key.
+4\. Next we need to generate Laravel key:
 ```sh
 php artisan key:generate
+```
+
+5\. We need to link our storage folder to public folder:
+```sh
+php artisan key:generate
+```
+
+6\. Now we need to set our env file. Go to the root of your project and execute this command:
+```sh
+cp .env.example .env
 ```
 And now you should provide **.env** file all the necessary environment variables:
 
@@ -98,37 +97,16 @@ You can run Laravel's built-in development server by executing:
   php artisan serve
 ```
 
-You must also run:
+For Tailiwind CSS to work you must also run:
 
 ```sh
   npm run dev
 ```
-it is needed for Tailiwind CSS to work!
-
-
-
-#
-### Deployment
-<br/>
-
-!["CI / CD"](./readme/assets/cicd.png)
-
-<br />
-
-Continues Development / Continues Integration & Deployment steps:
-* CI \ CD process first step is of course is development.
-* After some time of development when you are ready to integrate and deploy your feature/fix/work you make a commit or pull request to gihub branch.
-* That triggers github action which listens to pull requests and commits on development and master branch. Github actions will set up configure project, run unit tests.
-* If unit tests fail, you go a head and do some fixing and aftermath try again.
-* If unit tests succeed then github actions will deploy your code to development or production server according to the branch you are making commit to.
-* After deploying, github actions script will build your code and run migrations all to be up to date.
-
-Then everything should be OK :pray:
 
 #
 ### Resources
 
-1\. Git Book.
+1\. Git Book:
 ```sh
 https://redberry.gitbook.io/assignment-i-movie-quotes/
 ```
@@ -142,5 +120,10 @@ https://www.figma.com/file/IIJOKK5esgM8uK8pM3D59J/Movie-Quotes?node-id=0%3A1
 https://drawsql.app/teams/skeleton-team/diagrams/movie-quotes
 ```
 
+#
+### User Creation
 
-
+1\. App has no login system in order to create new user run:
+```sh
+php artisan create:user {name} {email} {password}
+```
