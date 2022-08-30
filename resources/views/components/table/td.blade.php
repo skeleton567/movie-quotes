@@ -1,1 +1,1 @@
-<td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-black sm:pl-6">{{$slot}}</td>
+<td class=" max-w-md w-64 h-10 py-4 pl-4 pr-3 text-sm font-medium text-black sm:pl-6">{{$slot}}</td>

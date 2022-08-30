@@ -1,5 +1,5 @@
 <x-layout class="h-[calc(100vh-100px)]">
-    <x-form.wrap class="mt-20">
+    <x-form.wrap class="mt-20 w-[900px]">
         <x-list-wrap :lists="$quotes" name="{{__('text.quotes')}}">
             <x-table.wrap>
                 <thead class="bg-gray-100">

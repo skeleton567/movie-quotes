@@ -31,4 +31,5 @@ return [
     'edit_movie' => 'Edit movie',
     'edit' => 'Edit',
     'delete' => 'Delete',
+    'email_incorect'=>'Email or password is not correct'
 ];

@@ -20,7 +20,7 @@ class MovieController extends Controller
     public function index()
     {
         return view('dashboard.show-movies', [
-            'movies' => Movie::simplePaginate(10)
+            'movies' => Movie::simplePaginate(5)
         ]);
     }
 

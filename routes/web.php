@@ -24,12 +24,10 @@ Route::middleware(['language'])->group(function () {
     Route::get('/', [QuoteController::class, 'index'])->name('home');
     Route::get('/movies/{movie}', [MovieController::class, 'show'])->name('movie');
 
-
     Route::middleware(['auth'])->group(function () {
         Route::post('/logout', [SessionsController::class, 'destroy'])->name('session.destroy');
 
         Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
-
 
         Route::controller(MovieController::class)->group(function () {
             Route::get('/dashboard/movies', 'index')->name('dashboard.movies');
@@ -55,6 +53,5 @@ Route::middleware(['language'])->group(function () {
         Route::post('/login', [SessionsController::class, 'store'])->name('session.store');
     });
 });
-
 
 Route::get('locale/{locale}', [LanguageController::class, 'change'])->name('language.change');
