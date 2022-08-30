@@ -14,7 +14,6 @@ The platform has its own admin panel where you can add movies and quotes.
 * [Migrations](#migration)
 * [Development](#development)
 * [Resources](#resources)
-* [User Creation](#user-creation)
 
 #
 ### Prerequisites
@@ -48,19 +47,17 @@ composer install
 ```sh
 npm install
 ```
-4\. Next we need to generate Laravel key:
-```sh
-php artisan key:generate
-```
-
-5\. We need to link our storage folder to public folder:
+4\. We need to link our storage folder to public folder:
 ```sh
 php artisan storage:link
 ```
-
-6\. Now we need to set our env file. Go to the root of your project and execute this command:
+5\. Now we need to set our env file. Go to the root of your project and execute this command:
 ```sh
 cp .env.example .env
+```
+6\. Next we need to generate Laravel key:
+```sh
+php artisan key:generate
 ```
 And now you should provide **.env** file all the necessary environment variables:
 
@@ -106,24 +103,8 @@ For Tailiwind CSS to work you must also run:
 #
 ### Resources
 
-1\. Git Book:
-```sh
-https://redberry.gitbook.io/assignment-i-movie-quotes/
-```
-
-2\. Design:
-```sh
-https://www.figma.com/file/IIJOKK5esgM8uK8pM3D59J/Movie-Quotes?node-id=0%3A1
-```
-3\. Database structure in DrawSQL:
+1\. Database structure in DrawSQL:
 ```sh
 https://drawsql.app/teams/skeleton-team/diagrams/movie-quotes
 ```
-
-#
-### User Creation
-
-1\. App has no login system in order to create new user run:
-```sh
-php artisan create:user {name} {email} {password}
-```
+<img src="readme/assets/drawsql.png" width="100" height="50" style="position: relative; top: 4px" />
