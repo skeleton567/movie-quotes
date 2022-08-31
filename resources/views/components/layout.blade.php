@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Movie quotes</title>
+    <link href="http://fonts.cdnfonts.com/css/sansation" rel="stylesheet">
     @vite('resources/css/app.css')
 </head>
-<body  class= "box-border bg-darkGray-image m-0 p-4"> 
+<body  class="font-['Sansation'] box-border bg-darkGray-image m-0 p-4"> 
 
-    <nav class="mr-6 w-full text-white fixed flex justify-end pr-10">
+    <nav class=" mr-6 w-full text-white fixed flex justify-end pr-10">
         
             <ul class="flex space-x-6">
                 
