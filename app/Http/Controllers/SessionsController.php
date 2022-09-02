@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreSessionsRequest;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Validation\ValidationException;
@@ -16,7 +17,7 @@ class SessionsController extends Controller
         return view('session.create');
     }
 
-    public function store(StoreSessionsRequest $request): RedirectResponse
+    public function login(StoreSessionsRequest $request): RedirectResponse
     {
         if (!auth()->attempt($request->validated())) {
             throw ValidationException::withMessages([
@@ -28,7 +29,7 @@ class SessionsController extends Controller
         return redirect('/');
     }
 
-    public function destroy(): RedirectResponse
+    public function logout(): RedirectResponse
     {
         auth()->logout();
         return redirect('/');
