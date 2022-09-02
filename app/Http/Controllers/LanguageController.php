@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Http\RedirectResponse;
 
 class LanguageController extends Controller
 {
     //
-    public function change(string $locale)
+    public function change(string $locale): RedirectResponse
     {
         if (in_array($locale, config('app.available_locales'))) {
             session()->put('lang', $locale);
