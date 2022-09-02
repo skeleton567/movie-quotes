@@ -25,7 +25,7 @@ Route::middleware(['language'])->group(function () {
     Route::get('/movies/{movie}', [MovieController::class, 'show'])->name('movie');
 
     Route::middleware(['auth'])->group(function () {
-        Route::post('/logout', [SessionsController::class, 'destroy'])->name('session.destroy');
+        Route::post('/logout', [SessionsController::class, 'logout'])->name('session.destroy');
 
         Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
@@ -50,7 +50,7 @@ Route::middleware(['language'])->group(function () {
 
     Route::middleware(['guest'])->group(function () {
         Route::get('/login', [SessionsController::class, 'create'])->name('session.create');
-        Route::post('/login', [SessionsController::class, 'store'])->name('session.store');
+        Route::post('/login', [SessionsController::class, 'login'])->name('session.store');
     });
 });
 
